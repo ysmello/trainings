@@ -15,6 +15,16 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
+    const allTransactions = this.transactionsRepository.all();
+    const balance = this.transactionsRepository.getBalance();
+
+    if (
+      (type === 'outcome' && !allTransactions.length) ||
+      (type === 'outcome' && balance.total < value)
+    ) {
+      throw Error('O valor retirado é maior q o obtido');
+    }
+
     const transactionRepository = this.transactionsRepository.create({
       title,
       value,
