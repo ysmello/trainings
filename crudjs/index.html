@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>JavaScript</title>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand" id="navTitle"></a>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control input-default" id="item" placeholder="Item">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-default" id="value" placeholder="Price">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-default" id="amount" placeholder="Amount">
+            </div>
+            <span id="btnUpdate" style="display: none;">
+                <span id="inputUpdate"></span>
+                <button onclick="saveItem()" class="btn btn-default">Save</button>
+                <button onclick="cancelItem()" class="btn btn-default">Cancel</button>
+            </span>
+            <span id="btnAdd">
+                <button onclick="addItem()" class="btn btn-default">add</button>
+                <button onclick="cancelItem()" class="btn btn-default">Cancel</button>
+                <button onclick="deleteList()" class="btn btn-default">Delete List</button>
+            </span>
+        </div>
+        <span id="error"></span>
+        <table id="idTable" class="table"></table>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <h4 class="text-center text-success">Total: <span id="totalValue"></span></h4>
+        </div>
+    </nav>
+
+
+    <script src="js/config.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
